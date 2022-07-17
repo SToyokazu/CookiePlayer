@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>CookiePlayer</title>
+
+        <script src="CookiePlayerFunction.js"></script>
+
+    </head>
+
+    <body>
+    <h1>CookiePlayer</h1>
+
+        <h2>モード選択</h2>
+        <div>
+            <label for="AutoCookieClick">
+                大クッキー自動クリック
+                <input id="AutoCookieClick" type="checkbox" name="AutoCookieClick">
+            </label>
+        </div>
+
+        <div>
+            <label for="AutoGCClick">
+                GC・RC自動クリック
+                <input id="AutoGCClick" type="checkbox" name="AutoGCClick">
+            </label>
+        </div>
+
+        <div>
+            <label for="AutoNewsClick">
+                ニュース自動クリック
+                <input id="AutoNewsClick" type="checkbox" name="AutoNewsClick">
+            </label>
+        </div>
+
+        <div>
+            <label for="AutoProductClick">
+                施設自動購入
+                <input id="AutoProductClick" type="checkbox" name="AutoProductClick">
+            </label>
+        </div>
+
+        <div>
+            <label>
+                <label for="FullAuto">
+                全自動
+                <input id="FullAuto" type="checkbox" name="FullAuto">
+            </label>
+        </div>
+
+        <script>
+            document.getElementById("AutoCookieClick").addEventListener('change',AutoCookieClickFunction);
+        </script>
+
+    </body>
+
+</html>
