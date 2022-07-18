@@ -1,4 +1,4 @@
-var autoCookieClick = new AutoCookieClick();
+window.addEventListener('message', EventListener);
 
 function EventListener(e)
 {
@@ -7,24 +7,25 @@ function EventListener(e)
       return;
     }
 
+    var AutoCookieClick = AutoCookieClickFunction;
+
     switch (e.data.message) {
         case "AutoCookieClick":
-            autoCookieClick.execute(e);
+            AutoCookieClick(e);
             break;
     }
 }
 
-class AutoCookieClick
+function AutoCookieClickFunction(e)
 {
-    execute(e) {
-        if (e.data.status === true) {
-            console.log("Auto cookie click on: " + this.id);
-            this.id = setInterval(Game.ClickCookie, 4);
-        } else {
-            console.log("Auto cookie click off: " + this.id);
-            clearInterval(this.id);
-        }
-    }
-}
+    arguments.callee.id = 0;
 
-window.addEventListener('message', EventListener);
+    if(e.data.status ===  true){
+        this.id = setInterval(Game.ClickCookie,4);
+        console.log("Auto cookie click on: "+ this.id);
+    }else{
+        console.log("Auto cookie click off: "+this.id);
+        clearInterval(this.id);
+    }
+    
+}
