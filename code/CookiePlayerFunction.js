@@ -20,10 +20,10 @@ function AutoCookieClickFunction(e)
 {
 
     if(e.data.status ===  true){
-        console.log("Auto cookie click on: "+id);
+        console.log("Auto cookie click on: "+ this.id);
         this.id = setInterval(Game.ClickCookie,4);
     }else{
-        console.log("Auto cookie click off: "+id);
+        console.log("Auto cookie click off: "+ this.id);
         clearInterval(this.id);
     }
     
