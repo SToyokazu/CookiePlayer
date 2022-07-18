@@ -1,5 +1,7 @@
 window.addEventListener('message', EventListener);
 
+var autoCookieClick = new AutoCookieClick;
+
 function EventListener(e)
 {
     //URLチェック
@@ -7,7 +9,6 @@ function EventListener(e)
       return;
     }
 
-    var autoCookieClick = new AutoCookieClick;
 
     switch (e.data.message) {
         case "AutoCookieClick":
