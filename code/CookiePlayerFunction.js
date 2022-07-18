@@ -1,5 +1,3 @@
-window.addEventListener('message', EventListener);
-
 var autoCookieClick = new AutoCookieClick;
 
 function EventListener(e)
@@ -8,7 +6,6 @@ function EventListener(e)
     if (event.origin !== "https://stoyokazu.github.io" ){
       return;
     }
-
 
     switch (e.data.message) {
         case "AutoCookieClick":
@@ -29,3 +26,5 @@ class AutoCookieClick
         }
     }
 }
+
+window.addEventListener('message', EventListener);
