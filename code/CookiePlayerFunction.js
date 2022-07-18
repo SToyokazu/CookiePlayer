@@ -7,7 +7,7 @@ function EventListener(e)
       return;
     }
 
-    var AutoCookieClick = AutoCookieClickFunction;
+    var AutoCookieClick = new AutoCookieClickFunction;
 
     switch (e.data.message) {
         case "AutoCookieClick":
@@ -21,10 +21,10 @@ function AutoCookieClickFunction(e)
 
     if(e.data.status ===  true){
         console.log("Auto cookie click on: "+id);
-        AutoCookieClickFunction.id = setInterval(Game.ClickCookie,4);
+        this.id = setInterval(Game.ClickCookie,4);
     }else{
         console.log("Auto cookie click off: "+id);
-        clearInterval(AutoCookieClickFunction.id);
+        clearInterval(this.id);
     }
     
 }
