@@ -1,4 +1,4 @@
-var autoCookieClick = new AutoCookieClick;
+var autoCookieClick = new AutoCookieClick();
 
 function EventListener(e)
 {
