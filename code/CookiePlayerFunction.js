@@ -7,9 +7,11 @@ function EventListener(e)
       return;
     }
 
+    var AutoCookieClick = AutoCookieClickFunction;
+
     switch (e.data.message) {
         case "AutoCookieClick":
-            AutoCookieClickFunction(e);
+            AutoCookieClick(e);
             break;
     }
 }
@@ -18,7 +20,7 @@ function AutoCookieClickFunction(e)
 {
     var id;
 
-    if(e.statuse ===  true){
+    if(e.status ===  true){
         console.log("Auto cookie click on: "+id);
         id = setInterval(Game.ClickCookie,4);
     }else{
