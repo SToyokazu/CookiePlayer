@@ -3,11 +3,7 @@ window.addEventListener('message', EventListener);
 function EventListener(e)
 {
     //URLチェック
-    if (event.origin !== "http://orteil.dashnet.org/cookieclicker/" ){
-      return;
-    }
-
-    if (event.origin !== "http://natto0wtr.web.fc2.com/CookieClicker/" ){
+    if (event.origin !== "https://stoyokazu.github.io/CookiePlayer/code/index.html" ){
       return;
     }
 
