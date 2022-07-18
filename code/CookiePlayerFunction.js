@@ -3,7 +3,7 @@ window.addEventListener('message', EventListener);
 function EventListener(e)
 {
     //URLチェック
-    if (event.origin !== "https://stoyokazu.github.io/CookiePlayer/code/index.html" ){
+    if (event.origin !== "https://stoyokazu.github.io" ){
       return;
     }
 
