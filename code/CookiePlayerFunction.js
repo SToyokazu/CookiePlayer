@@ -7,11 +7,11 @@ function EventListener(e)
       return;
     }
 
-    var AutoCookieClick = new AutoCookieClickFunction;
+    var AutoCookieClick = new AutoCookieClickFunction(e);
 
     switch (e.data.message) {
         case "AutoCookieClick":
-            AutoCookieClick(e);
+            AutoCookieClick;
             break;
     }
 }
