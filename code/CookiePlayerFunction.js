@@ -8,10 +8,14 @@ function EventListener(e)
     }
 
     var AutoCookieClick = AutoCookieClickFunction;
+    var AutoGCClick = AutoGCClickFunction;
 
     switch (e.data.message) {
         case "AutoCookieClick":
             AutoCookieClick(e);
+            break;
+        case "AutoGCClick":
+            AutoGCClick(e);
             break;
     }
 }
