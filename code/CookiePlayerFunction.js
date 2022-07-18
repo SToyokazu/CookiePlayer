@@ -7,24 +7,24 @@ function EventListener(e)
       return;
     }
 
-    var AutoCookieClick = new AutoCookieClickFunction(e);
+    var AutoCookieClick = new AutoCookieClick;
 
     switch (e.data.message) {
         case "AutoCookieClick":
-            AutoCookieClick;
+            AutoCookieClick.execute(e);
             break;
     }
 }
 
-function AutoCookieClickFunction(e)
+class AutoCookieClick
 {
-
-    if(e.data.status ===  true){
-        console.log("Auto cookie click on: "+ this.id);
-        this.id = setInterval(Game.ClickCookie,4);
-    }else{
-        console.log("Auto cookie click off: "+ this.id);
-        clearInterval(this.id);
+    execute(e) {
+        if (e.data.status === true) {
+            console.log("Auto cookie click on: " + this.id);
+            this.id = setInterval(Game.ClickCookie, 4);
+        } else {
+            console.log("Auto cookie click off: " + this.id);
+            clearInterval(this.id);
+        }
     }
-    
 }
