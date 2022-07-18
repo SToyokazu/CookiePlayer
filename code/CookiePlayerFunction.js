@@ -18,14 +18,13 @@ function EventListener(e)
 
 function AutoCookieClickFunction(e)
 {
-    var id;
 
     if(e.data.status ===  true){
         console.log("Auto cookie click on: "+id);
-        id = setInterval(Game.ClickCookie,4);
+        AutoCookieClickFunction.id = setInterval(Game.ClickCookie,4);
     }else{
         console.log("Auto cookie click off: "+id);
-        clearInterval(id);
+        clearInterval(AutoCookieClickFunction.id);
     }
     
 }
