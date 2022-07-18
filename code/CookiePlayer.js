@@ -1,2 +1,2 @@
 window.open("https://stoyokazu.github.io/CookiePlayer/code/index.html", "", "width=250,height=350,scrollbars=yes,resizable=yes,status=yes");
-Gamepad.LoadMod("https://stoyokazu.github.io/CookiePlayer/CookiePlayerFunction.js");
+Game.LoadMod("https://stoyokazu.github.io/CookiePlayer/CookiePlayerFunction.js");
