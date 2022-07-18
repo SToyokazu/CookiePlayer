@@ -1,4 +1,4 @@
-window.addEventListener('message', EventListenere);
+window.addEventListener('message', EventListener);
 
 function EventListener(e)
 {
