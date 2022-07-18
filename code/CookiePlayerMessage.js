@@ -9,5 +9,5 @@ function AutoCookieClickMessage()
         modeStatus = false;
     }
 
-    window.postMessage({ message: modeMessage, status: modeStatus }, '*');
+    window.opener.postMessage({ message: modeMessage, status: modeStatus }, '*');
 }
