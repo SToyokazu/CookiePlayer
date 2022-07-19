@@ -17,6 +17,9 @@ function EventListener(e)
         case "AutoGCClick":
             AutoGCClick(e);
             break;
+        case "AutoNewsClick":
+            AutoNewsClick(e);
+            break;
     }
 }
 
@@ -31,7 +34,6 @@ function AutoCookieClickFunction(e)
         console.log("Auto cookie click off: "+this.id);
         clearInterval(this.id);
     }
-    
 }
 
 function AutoGCClickFunction(e)
@@ -52,5 +54,25 @@ function AutoGCClickFunction(e)
         console.log("Auto GC click off: "+this.id);
         clearInterval(this.id);
     }
-    
+}
+
+function AutoNewsClick(e)
+{
+    arguments.callee.id = 0;
+
+    var NewsClick = function()
+    {
+        if (Game.TickerEffect && Game.TickerEffect.type == 'fortune') {
+            Game.tickerL.click();
+        }
+    }
+
+    if(e.data.status ===  true){
+        this.id = setInterval(NewsClick,2500);
+        console.log("Auto News click on: "+ this.id);
+    }else{
+        console.log("Auto News click off: "+this.id);
+        clearInterval(this.id);
+    }
+
 }
