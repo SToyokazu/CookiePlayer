@@ -98,7 +98,7 @@ function AutoProductClick(e)
     }
 
     if(e.data.status ===  true){
-        this.id = setInterval(ProductClick,4);
+        this.id = setInterval(ProductClick,e.data.value);
         console.log("Auto Product click on: "+ this.id);
     }else{
         console.log("Auto Product click off: "+this.id);
