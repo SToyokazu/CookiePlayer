@@ -97,11 +97,10 @@ function AutoProductClick(e)
         }
     }
 
+    console.log("Auto Product click off: " + this.id);
+    clearInterval(this.id);
     if(e.data.status ===  true){
         this.id = setInterval(ProductClick,e.data.value);
         console.log("Auto Product click on: "+ this.id);
-    }else{
-        console.log("Auto Product click off: "+this.id);
-        clearInterval(this.id);
     }
 }
