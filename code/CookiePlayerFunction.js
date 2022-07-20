@@ -91,9 +91,16 @@ function AutoProductClick(e)
                 continue;
             }
 
+            var pastBuyMode = Game.buyMode;
+            var pastBuyBulk = Game.buyBulk;
+
+            Game.buyMode = 1;
+            Game.buyBulk = 100;
             while (Game.cookies >= Game.ObjectsById[i].getPrice()){
                 Game.ClickProduct(i);
             }
+            Game.buyMode = pastBuyMode;
+            Game.buyBulk = pastBuyBulk;
         }
     }
 
