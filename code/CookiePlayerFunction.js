@@ -20,6 +20,9 @@ function EventListener(e)
         case "AutoNewsClick":
             AutoNewsClick(e);
             break;
+        case "AutoProductClick":
+            AutoProductClick(e);
+            break;
     }
 }
 
