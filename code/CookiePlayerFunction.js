@@ -91,7 +91,7 @@ function AutoProductClick(e)
                 continue;
             }
 
-            while (Game.cookie >= Game.ObjectsById[i].getPrice()){
+            while (Game.cookies >= Game.ObjectsById[i].getPrice()){
                 Game.ClickProduct(i);
             }
         }
