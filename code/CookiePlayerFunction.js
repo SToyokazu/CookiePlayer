@@ -85,7 +85,7 @@ function AutoProductClick(e)
 
     var ProductClick = function()
     {
-        for (let i = Game.ObjectsN - 1; i >= 0; i++) {
+        for (let i = Game.ObjectsN - 1; i >= 0; i--) {
 
             if (Game.ObjectsById[i].locked != 0) {
                 continue;
