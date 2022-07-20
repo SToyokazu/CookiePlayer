@@ -87,12 +87,11 @@ function AutoProductClick(e)
     {
         for (let i = Game.ObjectsN - 1; i >= 0; i++) {
 
-            let targetObject = Game.ObjectsById[i]; 
-            if (targetObject.locked != 0) {
+            if (Game.ObjectsById[i].locked != 0) {
                 continue;
             }
 
-            while (Game.cookie >= targetObject.getPrice()){
+            while (Game.cookie >= Game.ObjectsById[i].getPrice()){
                 Game.ClickProduct(i);
             }
         }
