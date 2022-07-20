@@ -39,6 +39,7 @@
             <label for="AutoProductClick">
                 施設自動購入
                 <input id="AutoProductClick" type="checkbox" name="AutoProductClick">
+                <input id="AutoProductClickSpan" type="number" name="AutoProductClickSpan"> ms
             </label>
         </div>
 
@@ -54,6 +55,7 @@
             document.getElementById("AutoCookieClick").addEventListener('change',function(){AutoMessage("AutoCookieClick")});
             document.getElementById("AutoGCClick").addEventListener('change',function(){AutoMessage("AutoGCClick")});
             document.getElementById("AutoNewsClick").addEventListener('change',function(){AutoMessage("AutoNewsClick")});
+            document.getElementById("AutoProductClick").addEventListener('change',function(){AutoMessage("AutoProductClick")});
         </script>
 
     </body>

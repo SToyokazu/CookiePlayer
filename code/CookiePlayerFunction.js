@@ -74,5 +74,32 @@ function AutoNewsClick(e)
         console.log("Auto News click off: "+this.id);
         clearInterval(this.id);
     }
+}
 
+function AutoProductClick(e)
+{
+    arguments.callee.id = 0;
+
+    var ProductClick = function()
+    {
+        for (let i = Game.ObjectsN - 1; i >= 0; i++) {
+
+            let targetObject = Game.ObjectsById[i]; 
+            if (targetObject.locked != 0) {
+                continue;
+            }
+
+            while (Game.cookie >= targetObject.getPrice()){
+                Game.ClickProduct(i);
+            }
+        }
+    }
+
+    if(e.data.status ===  true){
+        this.id = setInterval(ProductClick,4);
+        console.log("Auto Product click on: "+ this.id);
+    }else{
+        console.log("Auto Product click off: "+this.id);
+        clearInterval(this.id);
+    }
 }
