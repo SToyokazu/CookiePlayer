@@ -92,15 +92,12 @@ function AutoProductClick(e)
             }
 
             var pastBuyMode = Game.buyMode;
-            var pastBuyBulk = Game.buyBulk;
 
             Game.buyMode = 1;
-            Game.buyBulk = 100;
             while (Game.cookies >= Game.ObjectsById[i].getPrice()){
-                Game.ClickProduct(i);
+                Game.ObjectsById[i].buy(10000);
             }
             Game.buyMode = pastBuyMode;
-            Game.buyBulk = pastBuyBulk;
         }
     }
 
