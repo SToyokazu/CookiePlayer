@@ -28,20 +28,20 @@ function EventListener(e)
 
 function AutoCookieClickFunction(e)
 {
-    arguments.callee.id = 0;
+    arguments.callee.autoCookieClickId = 0;
 
     if(e.data.status ===  true){
-        this.id = setInterval(Game.ClickCookie,4);
-        console.log("Auto cookie click on: "+ this.id);
+        this.autoCookieClickId = setInterval(Game.ClickCookie,4);
+        console.log("Auto cookie click on: "+ this.autoCookieClickId);
     }else{
-        console.log("Auto cookie click off: "+this.id);
-        clearInterval(this.id);
+        console.log("Auto cookie click off: "+this.autoCookieClickId);
+        clearInterval(this.autoCookieClickId);
     }
 }
 
 function AutoGCClickFunction(e)
 {
-    arguments.callee.id = 0;
+    arguments.callee.autoGCClickId = 0;
 
     var AllGCPop = function()
     {
@@ -51,17 +51,17 @@ function AutoGCClickFunction(e)
     }
 
     if(e.data.status ===  true){
-        this.id = setInterval(AllGCPop,500);
-        console.log("Auto GC click on: "+ this.id);
+        this.autoGCClickId = setInterval(AllGCPop,500);
+        console.log("Auto GC click on: "+ this.autoGCClickId);
     }else{
-        console.log("Auto GC click off: "+this.id);
-        clearInterval(this.id);
+        console.log("Auto GC click off: "+this.autoGCClickId);
+        clearInterval(this.autoGCClickId);
     }
 }
 
 function AutoNewsClick(e)
 {
-    arguments.callee.id = 0;
+    arguments.callee.autoNewsClickId = 0;
 
     var NewsClick = function()
     {
@@ -71,17 +71,17 @@ function AutoNewsClick(e)
     }
 
     if(e.data.status ===  true){
-        this.id = setInterval(NewsClick,2500);
-        console.log("Auto News click on: "+ this.id);
+        this.autoNewsClickId = setInterval(NewsClick,2500);
+        console.log("Auto News click on: "+ this.autoNewsClickId);
     }else{
-        console.log("Auto News click off: "+this.id);
-        clearInterval(this.id);
+        console.log("Auto News click off: "+this.autoNewsClickId);
+        clearInterval(this.autoNewsClickId);
     }
 }
 
 function AutoProductClick(e)
 {
-    arguments.callee.id = 0;
+    arguments.callee.autoProductClickId = 0;
 
     var ProductClick = function()
     {
@@ -97,10 +97,10 @@ function AutoProductClick(e)
         }
     }
 
-    console.log("Auto Product click off: " + this.id);
-    clearInterval(this.id);
+    console.log("Auto Product click off: " + this.autoProductClickId);
+    clearInterval(this.autoProductClickId);
     if(e.data.status ===  true){
-        this.id = setInterval(ProductClick,e.data.value);
-        console.log("Auto Product click on: "+ this.id);
+        this.autoProductClickId = setInterval(ProductClick,e.data.value);
+        console.log("Auto Product click on: "+ this.autoProductClickId);
     }
 }
