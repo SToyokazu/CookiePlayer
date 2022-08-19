@@ -69,6 +69,8 @@ function SimulateObjectsInitialize(id, additionalAmount) {
         objects.amount = Game.Objects[i].amount;
         objects.cps = Game.Objects[i].cps;
         objects.level = Game.Objects[i].level;
+        objects.storedCps = Game.Objects[i].storedCps;
+        objects.storedTotalCps = Game.Objects[i].storedTotalCps;
 
         if (Game.Objects[i].id == id) {
             objects.amount += additionalAmount;
