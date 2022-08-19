@@ -67,6 +67,7 @@ function SimulateObjectsInitialize(id, additionalAmount) {
         objects.name = Game.Objects[i].name;
         objects.id = Game.Objects[i].id;
         objects.amount = Game.Objects[i].amount;
+        objects.baseCps = Game.Objects[i].baseCps;
         objects.cps = Game.Objects[i].cps;
         objects.level = Game.Objects[i].level;
         objects.storedCps = Game.Objects[i].storedCps;
