@@ -1,6 +1,4 @@
-import SimulateObjectsInitialize from './CookieClickerSimulate.js';
-import SimulateUpgradesInitialize from './CookieClickerSimulate.js';
-import SimulateGains from './CookieClickerSimulate.js';
+import {SimulateObjectsInitialize, SimulateUpgradesInitialize, SimulateGains} from './CookieClickerSimulate.js';
 
 window.addEventListener('message', EventListener);
 
