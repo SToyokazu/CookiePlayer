@@ -71,7 +71,7 @@ function SimulateObjectsInitialize(id, additionalAmount) {
         objects.level = Game.Objects[i].level;
 
         if (Game.Objects[i].id == id) {
-            objects[i].amount += additionalAmount;
+            objects.amount += additionalAmount;
         }
 
         SimulateObjects[i] = objects;
