@@ -64,11 +64,11 @@ var SimulateGetVeilBoost = function () {
 function SimulateObjectsInitialize(id, additionalAmount) {
     for (var i in Game.Objects) {
         let objects = {};
-        objects[i].name = Game.Objects[i].name;
-        objects[i].id = Game.Objects[i].id;
-        objects[i].amount = Game.Objects[i].amount;
-        objects[i].cps = Game.Objects[i].cps;
-        objects[i].level = Game.Objects[i].level;
+        objects.name = Game.Objects[i].name;
+        objects.id = Game.Objects[i].id;
+        objects.amount = Game.Objects[i].amount;
+        objects.cps = Game.Objects[i].cps;
+        objects.level = Game.Objects[i].level;
 
         if (Game.Objects[i].id == id) {
             objects[i].amount += additionalAmount;
