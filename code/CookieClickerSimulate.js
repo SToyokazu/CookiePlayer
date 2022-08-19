@@ -76,7 +76,7 @@ function SimulateObjectsInitialize(id, additionalAmount) {
             objects.amount += additionalAmount;
         }
 
-        SimulateObjects[i] = objects;
+        SimulateObjects[i] = JSON.parse(JSON.stringify(objects));
     }
 
     SimulateObjects['Cursor'].cps = function (me) {
