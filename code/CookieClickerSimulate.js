@@ -63,7 +63,10 @@ var SimulateGetVeilBoost = function () {
 //export function SimulateObjectsInitialize(id, additionalAmount) {
 function SimulateObjectsInitialize(id, additionalAmount) {
     for (var i in Game.Objects) {
-        SimulateObjects[i] = JSON.parse(JSON.stringify(Game.Objects[i]));
+        SimulateObjects[i].name = Game.Objects[i].name;
+        SimulateObjects[i].id = Game.Objects[i].id;
+        SimulateObjects[i].amount = Game.Objects[i].amount;
+        SimulateObjects[i].level = Game.Objects[i].level;
 
         if (Game.Objects[i].id == id) {
             SimulateObjects[i].amount += additionalAmount;
@@ -254,7 +257,7 @@ function SimulateObjectsInitialize(id, additionalAmount) {
 //export function SimulateUpgradesInitialize(id) {
 function SimulateUpgradesInitialize(id) {
     for (var i in Game.Upgrades) {
-        SimulateUpgrades[i] = JSON.parse(JSON.stringify(Game.Upgrades[i]));
+        SimulateUpgrades[i] = Game.Upgrades[i];
 
         if (Game.Upgrades[i].id == id) {
             SimulateUpgrades[i].bought = 1;
