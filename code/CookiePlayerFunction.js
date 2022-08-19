@@ -118,8 +118,8 @@ function AutoProductClick(e)
 
         var pastBuyMode = Game.buyMode;
         Game.buyMode = 1;
-        if (Game.cookies >= Game.ObjectsById[i].getPrice()) {
-            Game.ObjectsById[i].buy(1);
+        if (Game.cookies >= minObjects.getPrice()) {
+            minObjects.buy(1);
         }
         Game.buyMode = pastBuyMode;
 
