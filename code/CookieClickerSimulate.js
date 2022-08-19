@@ -60,7 +60,8 @@ var SimulateGetVeilBoost = function () {
     return n;
 }
 
-export function SimulateObjectsInitialize(id, additionalAmount) {
+//export function SimulateObjectsInitialize(id, additionalAmount) {
+function SimulateObjectsInitialize(id, additionalAmount) {
     for (var i in Game.Objects) {
         SimulateObjects[i] = Game.Objects[i];
 
@@ -250,7 +251,8 @@ export function SimulateObjectsInitialize(id, additionalAmount) {
 
 }
 
-export function SimulateUpgradesInitialize(id) {
+//export function SimulateUpgradesInitialize(id) {
+function SimulateUpgradesInitialize(id) {
     for (var i in Game.Upgrades) {
         SimulateUpgrades[i] = Game.Upgrades[i];
 
@@ -352,7 +354,8 @@ export function SimulateUpgradesInitialize(id) {
     }
 }
 
-export function SimulateGains() {
+//export function SimulateGains() {
+function SimulateGains() {
     let cookiesPs = 0;
     var mult = 1;
 
