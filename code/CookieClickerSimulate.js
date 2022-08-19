@@ -60,7 +60,6 @@ var SimulateGetVeilBoost = function () {
     return n;
 }
 
-//export function SimulateObjectsInitialize(id, additionalAmount) {
 function SimulateObjectsInitialize(id, additionalAmount) {
     for (var i in Game.Objects) {
         let objects = {};
@@ -261,14 +260,21 @@ function SimulateObjectsInitialize(id, additionalAmount) {
 
 }
 
-//export function SimulateUpgradesInitialize(id) {
 function SimulateUpgradesInitialize(id) {
     for (var i in Game.Upgrades) {
-        SimulateUpgrades[i] = Game.Upgrades[i];
+        let upgrades = {};
+        upgrades.name = Game.Upgrades[i].name;
+        upgrades.id = Game.Upgrades[i].id;
+        upgrades.bought = Game.Upgrades[i].bought;
+        upgrades.pool = Game.Upgrades[i].pool;
+        upgrades.tier = Game.Upgrades[i].tier;
+        upgrades.power = Game.Upgrades[i].power;
 
         if (Game.Upgrades[i].id == id) {
-            SimulateUpgrades[i].bought = 1;
+            upgrades.bought = 1;
         }
+
+        SimulateUpgrades[i] = JSON.parse(JSON.stringify(upgrades));
     }
 
     SimulateUpgrades['Pure heart biscuits'].power = function () {
