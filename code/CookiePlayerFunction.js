@@ -116,12 +116,15 @@ function AutoProductClick(e)
             }
         }
 
-        var pastBuyMode = Game.buyMode;
-        Game.buyMode = 1;
-        if (Game.cookies >= minObjects.getPrice()) {
-            minObjects.buy(1);
+        if (minObjects != undefined) {
+
+            var pastBuyMode = Game.buyMode;
+            Game.buyMode = 1;
+            if (Game.cookies >= minObjects.getPrice()) {
+                minObjects.buy(1);
+            }
+            Game.buyMode = pastBuyMode;
         }
-        Game.buyMode = pastBuyMode;
 
         /*
         for (let i = Game.ObjectsN - 1; i >= 0; i--) {
