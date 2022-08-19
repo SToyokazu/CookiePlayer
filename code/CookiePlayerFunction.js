@@ -1,3 +1,7 @@
+import SimulateObjectsInitialize from './CookieClickerSimulate.js'
+import SimulateUpgradesInitialize from './CookieClickerSimulate.js'
+import SimulateGains from './CookieClickerSimulate.js'
+
 window.addEventListener('message', EventListener);
 
 function EventListener(e)
@@ -85,6 +89,43 @@ function AutoProductClick(e)
 
     var ProductClick = function()
     {
+        let minThretholdTime;
+        let minObjects;
+
+        for (var i in Game.Objects) {
+            if(Game.Objects[i].locked != 0){
+                continue;
+            }
+
+            SimulateObjectsInitialize(Game.Objects[i].id, 1);
+            SimulateUpgradesInitialize(-1);
+            let deltaCps = SimulateGains();
+
+            let thretholdTime;
+
+            if (Game.cookies >= Game.Objects[i].getPrice()) {
+                thretholdTime = Game.Objects[i].getPrice() / (Game.cookiesPs + deltaCps);
+            } else {
+                thretholdTime = Game.Objects[i].getPrice() / Game.cookiesPs;
+            }
+
+            if(minThretholdTime == undefined) {
+                minThretholdTime = thretholdTime;
+                minObjects = Game.Objects[i];
+            } else if (minThretholdTime > thretholdTime) {
+                minThretholdTime = thretholdTime;
+                minObjects = Game.Objects[i];
+            }
+        }
+
+        var pastBuyMode = Game.buyMode;
+        Game.buyMode = 1;
+        if (Game.cookies >= Game.ObjectsById[i].getPrice()) {
+            Game.ObjectsById[i].buy(1);
+        }
+        Game.buyMode = pastBuyMode;
+
+        /*
         for (let i = Game.ObjectsN - 1; i >= 0; i--) {
 
             if (Game.ObjectsById[i].locked != 0) {
@@ -99,6 +140,7 @@ function AutoProductClick(e)
             }
             Game.buyMode = pastBuyMode;
         }
+        */
     }
 
     console.log("Auto Product click off: " + this.autoProductClickId);
