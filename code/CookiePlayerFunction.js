@@ -1,6 +1,6 @@
-import SimulateObjectsInitialize from 'https://stoyokazu.github.io/CookiePlayer/code/CookieClickerSimulate.js';
-import SimulateUpgradesInitialize from 'https://stoyokazu.github.io/CookiePlayer/code/CookieClickerSimulate.js';
-import SimulateGains from 'https://stoyokazu.github.io/CookiePlayer/code/CookieClickerSimulate.js';
+import SimulateObjectsInitialize from './CookieClickerSimulate.js';
+import SimulateUpgradesInitialize from './CookieClickerSimulate.js';
+import SimulateGains from './CookieClickerSimulate.js';
 
 window.addEventListener('message', EventListener);
 
