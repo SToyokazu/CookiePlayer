@@ -90,6 +90,9 @@ function AutoProductClick(e)
         let minThretholdTime;
         let minObjects;
 
+        let cookies = Game.cookies;
+        let cookiesPs = Game.cookiesPs;
+
         for (var i in Game.Objects) {
             if(Game.Objects[i].locked != 0){
                 continue;
@@ -102,9 +105,9 @@ function AutoProductClick(e)
             let thretholdTime;
 
             if (Game.cookies >= Game.Objects[i].getPrice()) {
-                thretholdTime = Game.Objects[i].getPrice() / (Game.cookiesPs + deltaCps);
+                thretholdTime = Game.Objects[i].getPrice() / (cookiesPs + deltaCps);
             } else {
-                thretholdTime = Game.Objects[i].getPrice() / Game.cookiesPs;
+                thretholdTime = Game.Objects[i].getPrice() / cookiesPs - deltaCps * cookies / ((cookiesPs + deltaCps) * cookiesPs);
             }
 
             if(minThretholdTime == undefined) {
