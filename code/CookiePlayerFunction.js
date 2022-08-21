@@ -100,7 +100,7 @@ function AutoProductClick(e)
 
             SimulateObjectsInitialize(Game.Objects[i].id, 1);
             SimulateUpgradesInitialize(-1);
-            let deltaCps = SimulateGains();
+            let deltaCps = SimulateGains() - cookiesPs;
 
             let thretholdTime;
 
@@ -152,5 +152,172 @@ function AutoProductClick(e)
     if(e.data.status ===  true){
         this.autoProductClickId = setInterval(ProductClick,e.data.value);
         console.log("Auto Product click on: "+ this.autoProductClickId);
+    }
+}
+
+function AutoUpgradeClick(e)
+{
+    arguments.callee.autoUpgradeClickId = 0;
+
+    var UpgradeClick = function()
+    {
+        let minThretholdTime;
+        let minUpgrades;
+
+        let cookies = Game.cookies;
+        let cookiesPs = Game.cookiesPs;
+
+        for (var i in Game.Upgrades) {
+            //自動購入対象外はスルー
+            if(Game.Upgrades[i].pool == "debug")    continue;
+            if(Game.Upgrades[i].pool == "prestige") continue;
+            if(Game.Upgrades[i].pool == "toggle") continue;
+            if(Game.Upgrades[i].id == 69) continue;
+            if(Game.Upgrades[i].id == 227) continue;
+
+            if(Game.Upgrades[i].unlocked != 1) continue;
+
+            //Cps以外に影響を及ぼす強化は優先的に購入
+            if(Game.Upgrades[i].id >= 0 && Game.Upgrades[i].id <= 6 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+            
+            if(Game.Upgrades[i].id == 43 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id >= 52 && Game.Upgrades[i].id <= 53 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id == 69 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id >= 75 && Game.Upgrades[i].id <= 78 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id == 82 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id == 86 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id == 109 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id == 119 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id == 152 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id >= 157 && Game.Upgrades[i].id <= 164 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id == 168 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id == 188 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id >= 222 && Game.Upgrades[i].id <= 226 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id == 324 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id >= 366 && Game.Upgrades[i].id <= 367 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id == 427 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id >= 460 && Game.Upgrades[i].id <= 461 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id >= 473 && Game.Upgrades[i].id <= 475 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id >= 621 && Game.Upgrades[i].id <= 638 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id == 640 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id == 642 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id >= 649 && Game.Upgrades[i].id <= 651 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id >= 660 && Game.Upgrades[i].id <= 661 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id == 698 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            if(Game.Upgrades[i].id >= 763 && Game.Upgrades[i].id <= 765 && Game.Upgrades[i].getPrice() <= cookies){
+                minUpgrades = Game.Upgrades[i];
+                break;
+            }
+
+            //アップグレード購入によるCpsの計算
+
+        }
+
+    }
+
+    console.log("Auto Upgrade click off: " + this.autoUpgradeClickId);
+    clearInterval(this.autoUpgradeClickId);
+    if(e.data.status ===  true){
+        this.autoUpgradeClickId = setInterval(UpgradeClick,e.data.value);
+        console.log("Auto Upgrade click on: "+ this.autoUpgradeClickId);
     }
 }

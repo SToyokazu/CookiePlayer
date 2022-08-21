@@ -39,10 +39,19 @@
             <label for="AutoProductClick">
                 施設自動購入
                 <input id="AutoProductClick" type="checkbox" name="AutoProductClick">
-                <input id="AutoProductClickSpan" type="number" value = 1000 name="AutoProductClickSpan"> ms
+                <input id="AutoProductClickSpan" type="number" value = 100 name="AutoProductClickSpan"> ms
             </label>
         </div>
 
+        <div>
+            <label for="AutoUpgradeClick">
+                強化自動購入
+                <input id="AutoUpgradeClick" type="checkbox" name="AutoUpgradeClick">
+                <input id="AutoUpgradeClickSpan" type="number" value = 100 name="AutoUpgradeClickSpan"> ms
+            </label>
+        </div>
+
+        <!--
         <div>
             <label>
                 <label for="FullAuto">
@@ -50,6 +59,7 @@
                 <input id="FullAuto" type="checkbox" name="FullAuto">
             </label>
         </div>
+        -->
 
         <script>
             document.getElementById("AutoCookieClick").addEventListener(
