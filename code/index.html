@@ -64,16 +64,27 @@
         <script>
             document.getElementById("AutoCookieClick").addEventListener(
                 'change',function(){AutoMessage("AutoCookieClick")});
+
             document.getElementById("AutoGCClick").addEventListener(
                 'change',function(){AutoMessage("AutoGCClick")});
+
             document.getElementById("AutoNewsClick").addEventListener(
                 'change',function(){AutoMessage("AutoNewsClick")});
+
             document.getElementById("AutoProductClick").addEventListener(
                 'change',function(){AutoMessageAddValue("AutoProductClick",
                 document.getElementById("AutoProductClickSpan").value)});
             document.getElementById("AutoProductClickSpan").addEventListener(
                 'change',function(){AutoMessageAddValue("AutoProductClick",
                 document.getElementById("AutoProductClickSpan").value)});
+
+            document.getElementById("AutoUpgradeClick").addEventListener(
+                'change',function(){AutoMessageAddValue("AutoUpgradeClick",
+                document.getElementById("AutoUpgradeClickSpan").value)});
+            document.getElementById("AutoUpgradeClickSpan").addEventListener(
+                'change',function(){AutoMessageAddValue("AutoUpgradeClick",
+                document.getElementById("AutoUpgradeClickSpan").value)});
+
         </script>
 
     </body>
