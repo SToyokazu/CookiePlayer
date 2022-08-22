@@ -123,7 +123,6 @@ function AutoProductClick(e)
         }
 
         if (minObjects != undefined) {
-
             var pastBuyMode = Game.buyMode;
             Game.buyMode = 1;
             if (Game.cookies >= minObjects.getPrice()) {
@@ -217,8 +216,10 @@ function AutoUpgradeClick(e)
             }
         }
 
-        if (Game.cookies >= minUpgrades.getPrice()) {
-            minUpgrades.buy(1);
+        if (minUpgrades != undefined) {
+            if (Game.cookies >= minUpgrades.getPrice()) {
+                minUpgrades.buy(1);
+            }
         }
 
     }
