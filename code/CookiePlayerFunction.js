@@ -353,18 +353,21 @@ function AutoProductAndUpgradeClick(e)
             }
         }
 
+        //両方とも購入しない
+        if(minObjects == undefined && minUpgrades == undefined) return;
+
         //両方を比較する
-        if(minObjectsThretholdTime <= minUpgradesThretholdTime){
-                var pastBuyMode = Game.buyMode;
-                Game.buyMode = 1;
-                if (Game.cookies >= minObjects.getPrice()) {
-                    minObjects.buy(1);
-                }
-                Game.buyMode = pastBuyMode;
-        }else{
-                if (Game.cookies >= minUpgrades.getPrice()) {
-                    minUpgrades.buy(1);
-                }
+        if (minObjectsThretholdTime <= minUpgradesThretholdTime) {
+            var pastBuyMode = Game.buyMode;
+            Game.buyMode = 1;
+            if (Game.cookies >= minObjects.getPrice()) {
+                minObjects.buy(1);
+            }
+            Game.buyMode = pastBuyMode;
+        } else {
+            if (Game.cookies >= minUpgrades.getPrice()) {
+                minUpgrades.buy(1);
+            }
         }
     }
 
