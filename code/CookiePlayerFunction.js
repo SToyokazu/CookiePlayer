@@ -170,6 +170,9 @@ function AutoUpgradeClick(e)
         let cookiesPs = Game.cookiesPs;
 
         for (var i in Game.Upgrades) {
+            //購入済みはスルー
+            if(Game.Upgrades[i.bought == 1]) continue;
+
             //自動購入対象外はスルー
             if(Game.Upgrades[i].pool == "debug")    continue;
             if(Game.Upgrades[i].pool == "prestige") continue;
