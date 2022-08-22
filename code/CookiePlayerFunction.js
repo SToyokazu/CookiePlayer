@@ -294,10 +294,10 @@ function AutoProductAndUpgradeClick(e)
                 thretholdTime = Game.Upgrades[i].getPrice() / cookiesPs - deltaCps * cookies / ((cookiesPs + deltaCps) * cookiesPs);
             }
 
-            if (minThretholdTime == undefined) {
+            if (minUpgradesThretholdTime == undefined) {
                 minUpgradesThretholdTime = thretholdTime;
                 minUpgrades = Game.Upgrades[i];
-            } else if (minThretholdTime > thretholdTime) {
+            } else if (minUpgradesThretholdTime > thretholdTime) {
                 minUpgradesThretholdTime = thretholdTime;
                 minUpgrades = Game.Upgrades[i];
             }
@@ -321,10 +321,10 @@ function AutoProductAndUpgradeClick(e)
                 thretholdTime = Game.Objects[i].getPrice() / cookiesPs - deltaCps * cookies / ((cookiesPs + deltaCps) * cookiesPs);
             }
 
-            if (minThretholdTime == undefined) {
+            if (minObjectsThretholdTime == undefined) {
                 minObjectsThretholdTime = thretholdTime;
                 minObjects = Game.Objects[i];
-            } else if (minThretholdTime > thretholdTime) {
+            } else if (minObjectsThretholdTime > thretholdTime) {
                 minObjectsThretholdTime = thretholdTime;
                 minObjects = Game.Objects[i];
             }
