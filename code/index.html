@@ -51,6 +51,14 @@
             </label>
         </div>
 
+        <div>
+            <label for="AutoProductAndUpgradeClick">
+                施設&強化自動購入
+                <input id="AutoProductAndUpgradeClick" type="checkbox" name="AutoProductAndUpgradeClick">
+                <input id="AutoProductAndUpgradeClickSpan" type="number" value = 100 name="AutoProductAndUpgradeClickSpan"> ms
+            </label>
+        </div>
+
         <!--
         <div>
             <label>
@@ -84,6 +92,13 @@
             document.getElementById("AutoUpgradeClickSpan").addEventListener(
                 'change',function(){AutoMessageAddValue("AutoUpgradeClick",
                 document.getElementById("AutoUpgradeClickSpan").value)});
+
+            document.getElementById("AutoProductAndUpgradeClick").addEventListener(
+                'change',function(){AutoMessageAddValue("AutoProductAndUpgradeClick",
+                document.getElementById("AutoProductAndUpgradeClickSpan").value)});
+            document.getElementById("AutoProductAndUpgradeClickSpan").addEventListener(
+                'change',function(){AutoMessageAddValue("AutoProductAndUpgradeClick",
+                document.getElementById("AutoProductAndUpgradeClickSpan").value)});
 
         </script>
 
