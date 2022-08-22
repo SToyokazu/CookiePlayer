@@ -28,6 +28,9 @@ function EventListener(e)
         case "AutoUpgradeClick":
             AutoUpgradeClick(e);
             break;
+        case "AutoProductAndUpgradeClick":
+            AutoProductAndUpgradeClick(e);
+            break;
     }
 }
 
